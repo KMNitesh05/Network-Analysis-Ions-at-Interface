@@ -1,0 +1,56 @@
+#
+
+# All the atoms from diferent molecules will be separated at least 2.0
+# Anstroms at the solution.
+
+tolerance 2.0
+
+# The file type of input and output files is PDB
+
+filetype pdb
+
+# The name of the output file
+
+output uo2_in_water_hex_pack.pdb
+
+
+structure tip3p_water.pdb 
+  number  6555  
+  inside box 0. 0. 0. 60. 60. 60. 
+end structure
+
+
+
+structure uo2.pdb 
+  number 32 
+  inside box 0. 0. 0. 60. 60. 60. 
+end structure
+
+
+
+structure nitrate.pdb 
+  number 714 
+  inside box 0. 0. 0. 60. 60. 60. 
+end structure
+
+
+
+structure li.pdb 
+  number 650
+  inside box 0. 0. 0. 60. 60. 60. 
+end structure
+
+
+structure hexane.pdb
+  number 475
+  inside box 0. 0. 60. 60. 60. 180. 
+end structure
+
+
+structure tbp_opt.pdb
+  number 238
+  inside box 0. 0. 60. 60. 60. 180. 
+end structure
+
+
+

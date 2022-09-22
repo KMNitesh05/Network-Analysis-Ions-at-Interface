@@ -1,0 +1,18 @@
+#!/bin/bash -x
+#SBATCH --job-name="TEST"
+#SBATCH --nodes=1
+#SBATCH --ntasks=20
+#SBATCH --export=ALL
+#SBATCH --time=144:00:00
+#SBATCH --array=1-1:1
+
+module load intel/xe_2016_update3
+module load gromacs/2016.2_mpi
+
+JOBID=`echo $SLURM_JOBID`
+
+cat $0 > script.$JOBID
+printenv > env.$JOBID
+
+
+srun --ntasks=20 --mpi=pmi2 gmx_mpi_d mdrun -deffnm 1MLiNO3_50percentTBP_nvt_40ns  > output.$JOBID
